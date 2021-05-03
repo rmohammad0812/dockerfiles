@@ -1,0 +1,9 @@
+#First Docker File
+
+FROM ubuntu #Pulls the image from ubuntu
+LABEL myfirstdevopsproj.com #labels the name of as devopsprject
+RUN apt-get update #updates the os
+RUN apt-get -y install apache2 #install apache
+ADD .var/www/html #adds the html file
+ENTRYPOINT apachectl -D FOREGROUND #start the engine
+ENV name RajaMohammad #variable name
